@@ -1,0 +1,12 @@
+{
+  "name": "Chat-app",
+  "version": "1.0",
+  "authors": [
+    "Lyfing <ilyfing@gmail.com>"
+  ],
+  "description": "A chat application using Laravel and AngularJS",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
