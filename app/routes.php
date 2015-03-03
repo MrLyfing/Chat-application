@@ -13,5 +13,14 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::group(array('prefix' => 'api'), function() {
+	Route::resource('messages', 'MessageController',
+		array('only' => array('index')));
+});
+
+App::missing(function($exception) { 
+    return View::make('index'); 
 });

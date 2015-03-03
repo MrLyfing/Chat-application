@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'chatapp_data',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'root', //PASSWORD YES(mac), NO(windows)
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
