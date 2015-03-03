@@ -38,9 +38,9 @@
 
 					<div class="panel-footer">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Enter Message" />
+							<input type="text" class="form-control" placeholder="Enter Message" ng-model="text_input"/>
 							<span class="input-group-btn">
-								<button class="btn btn-info" type="button">SEND</button>
+								<button class="btn btn-info" type="button" ng-click="createMessage()">SEND</button>
 							</span>
 						</div>
 					</div>

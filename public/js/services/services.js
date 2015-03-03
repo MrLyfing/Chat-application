@@ -25,7 +25,7 @@ angular.module('Services', [])
 		return deffered.promise;
 	};
 
-	ServicesUser.createMessage = function(text) {
+	ServicesUser.createMessage = function(text_) {
 		var deffered = $q.defer();
 		var req = {
 			method : 'POST',
@@ -51,7 +51,6 @@ angular.module('Services', [])
 
 		return deffered.promise;
 	};
-
 
 	return ServicesUser;
 }]);

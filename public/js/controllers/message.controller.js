@@ -11,7 +11,17 @@ angular.module('app')
 
 	};
 
+	$scope.createMessage = function() {
+		ServicesUser.createMessage($scope.text_input).then(function(data) {
+			console.log(data);
+		}).catch(function(data) {
+			console.log(data);
+		});
+	};
+
+	$scope.getMessages();
+
 	$interval(function() {
 		$scope.getMessages();
-	}, 3000);
+	}, 500);
 }]);

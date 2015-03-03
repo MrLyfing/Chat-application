@@ -18,11 +18,11 @@ class MessageController extends \BaseController {
 	 * @return Response
 	 */
 
-	public function create()
+	public function store()
 	{
 		Message::create(array(
-			'author' => Input::get('author'),
-			'user_id' => 1//Input::get('user_id')
+			'user_id' => 1 ,//Input::get('user_id')
+			'text' => Input::get('text')
 		));
 
 		$response = array(

@@ -3,6 +3,6 @@
 class Message extends Eloquent
 {
 	protected $table = 'messages'; //Will use the table messages
-	protected $fillable = array('text');
+	protected $fillable = array('user_id', 'text');
 
 }

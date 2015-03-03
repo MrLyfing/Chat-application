@@ -18,7 +18,7 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api'), function() {
 	Route::resource('messages', 'MessageController',
-		array('only' => array('index')));
+		array('only' => array('index', 'store')));
 });
 
 App::missing(function($exception) { 
