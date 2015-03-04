@@ -1,0 +1,31 @@
+<div class="container" style="padding-top:20px;">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h3 class="text-center">MY CHAT APPLICATION</h3>
+			<br /><br />
+			<div class="panel panel-info">
+
+				<div class="panel-heading">
+					CHAT HISTORY
+				</div>
+
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="message in messages">{{ message.text }}</li>
+				</ul>
+
+				<div class="panel-footer">
+					<form ng-submit="createMessage()">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Enter Message" ng-model="text_input"/>
+							<span class="input-group-btn">
+								<button class="btn btn-info" type="submit">SEND</button>
+							</span>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

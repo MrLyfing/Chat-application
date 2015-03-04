@@ -17,8 +17,12 @@ Route::get('/', function()
 });
 
 Route::group(array('prefix' => 'api'), function() {
-	Route::resource('messages', 'MessageController',
-		array('only' => array('index', 'store')));
+	//Route::post('auth', 'UserController@login');
+	//Route::post('new_user', 'UserController@create');
+	//Route::get('auth_users' 'UserController@get_auth_user');
+	
+	Route::get('messages', 'MessageController@index');
+	Route::post('messages', 'MessageController@store');
 });
 
 App::missing(function($exception) { 

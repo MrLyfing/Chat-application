@@ -52,5 +52,14 @@ angular.module('Services', [])
 		return deffered.promise;
 	};
 
+	ServicesUser.login = function(username_, password_) {
+
+
+	};
+
+	ServicesUser.create_user = function(username_, password_) {
+
+	};
+
 	return ServicesUser;
 }]);
