@@ -1,0 +1,15 @@
+#log_contain {
+	padding-top: 100px;
+}
+
+#chat_contain {
+	padding-top: 70px;
+}
+
+#panel_size {
+	height: 575px;
+}
+
+#panel_size_users {
+	height: 650px;
+}

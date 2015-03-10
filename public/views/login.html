@@ -1,7 +1,7 @@
-<div class="container" style="padding-top:100px;">
+<div class="container" id="log_contain">
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
-		<h3 class="text-center">My chat application</h3>
+		<h3 class="text-center">My Chat application</h3>
 			<hr>
 			<div class="panel panel-info">
 				<div class="panel-heading">
@@ -11,16 +11,18 @@
 					<form accept-charset="UTF-8" role="form">
 						<fieldset>
 							<div class="form-group">
-								<input class="form-control" placeholder="Username" name="username" type="text">
+								<input class="form-control" placeholder="Username" name="username" type="text" ng-model="username">
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Password" name="password" type="password" value="">
+								<input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="password">
 							</div>
-							<input class="btn btn-lg btn-info btn-block" type="submit" value="Login">
+							<input class="btn btn-lg btn-info btn-block" type="submit" value="Login" ng-click="login()">
 						</fieldset>
 					</form>
 				</div>
 			</div>
+			<hr>
+			<p class="text-right"><span class="glyphicon glyphicon-copyright-mark"></span><em> created by Lyfing</em></p>
 		</div>
 	</div>
 </div>

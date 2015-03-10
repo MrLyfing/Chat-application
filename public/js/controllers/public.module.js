@@ -1,6 +1,7 @@
 var app = angular.module('app', [
 	'Services',
-	'ui.router'
+	'ui.router',
+	'LocalStorageModule'
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -9,7 +10,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 	$stateProvider
 	.state('login', {
 		url: '/login',
-		templateUrl: '../public/views/login.html'
+		templateUrl: '../public/views/login.html',
+		controller: 'LoginCtrl'
 	});
 
 	$stateProvider

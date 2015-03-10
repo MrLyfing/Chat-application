@@ -1,31 +1,43 @@
-<div class="container" style="padding-top:20px;">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<h3 class="text-center">MY CHAT APPLICATION</h3>
-			<br /><br />
-			<div class="panel panel-info">
+<div class="container" id="chat_contain">
+	<div class="col-md-8">
+		<div class="panel panel-info">
 
-				<div class="panel-heading">
-					CHAT HISTORY
-				</div>
-
-				<ul class="list-group">
-					<li class="list-group-item" ng-repeat="message in messages">{{ message.text }}</li>
-				</ul>
-
-				<div class="panel-footer">
-					<form ng-submit="createMessage()">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Enter Message" ng-model="text_input"/>
-							<span class="input-group-btn">
-								<button class="btn btn-info" type="submit">SEND</button>
-							</span>
-						</div>
-					</form>
-				</div>
-
+			<div class="panel-heading">
+				CHAT HISTORY
+				<button class='btn btn-danger btn-xs pull-right' ng-click="logout()">Logout</button>
 			</div>
+
+
+			<ul class="list-group" id="panel_size">
+				<li class="list-group-item" ng-repeat="message in messages">
+					{{ message.text }}
+					<p class="text-right"><small><b>{{ message.sender }} | {{ message.created_at }}</b></small></p>
+				</li>
+			</ul>
+
+			<div class="panel-footer">
+				<form ng-submit="createMessage()">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Message" ng-model="text_input"/>
+						<span class="input-group-btn">
+							<button class="btn btn-info" type="submit">SEND</button>
+						</span>
+					</div>
+				</form>
+			</div>
+
 		</div>
 	</div>
 
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				ONLINE USERS
+			</div>
+			<ul class="list-group" id="panel_size_users">
+				<li class="list-group-item">Lyfing</li>
+			</ul>
+		</div>
+	</div>
 </div>
+

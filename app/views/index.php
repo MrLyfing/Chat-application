@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="style/style.css">
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -16,6 +17,7 @@
 	<script type="text/javascript" src="js/services/services.js"></script>
 	<script type="text/javascript" src="js/controllers/public.module.js"></script>
 	<script type="text/javascript" src="js/controllers/message.controller.js"></script>
+	<script type="text/javascript" src="js/controllers/login.controller.js"></script>
 </head>
 <body>
 	<div ui-view>

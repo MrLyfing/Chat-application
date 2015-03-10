@@ -2,36 +2,31 @@
 
 class MessageController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		return Response::json(Message::get());
+		$all = DB::table('messages')->get();
+		return Response::json($all);
 	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 
 	public function store()
 	{
 		Message::create(array(
-			'user_id' => 1 ,//Input::get('user_id')
-			'text' => Input::get('text')
+			'user_id' =>  Auth::id(),
+			'text' => Input::get('text'),
+			'sender' => Input::get('sender')
 		));
 
 		$response = array(
 			'success' => true
 		);
-
 		return Response::json($response);
-		
-		//
+	}
+
+	public function getLastMessages() //return the last messages
+	{
+		$query = DB::table('messages')->orderBy('created_at', 'DESC')->take(8)->get();
+		$last_messages = array_reverse($query);
+		return Response::json($last_messages);
 	}
 
 

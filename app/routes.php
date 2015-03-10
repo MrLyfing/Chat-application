@@ -17,11 +17,12 @@ Route::get('/', function()
 });
 
 Route::group(array('prefix' => 'api'), function() {
-	//Route::post('auth', 'UserController@login');
-	//Route::post('new_user', 'UserController@create');
-	//Route::get('auth_users' 'UserController@get_auth_user');
-	
-	Route::get('messages', 'MessageController@index');
+	Route::post('user/login', 'UserController@login');
+	Route::get('user/logout', 'UserController@logout');
+	//Route::post('user/create', 'UserController@create');
+	//Route::get('user/get_list' 'UserController@get_auth_user');
+
+	Route::get('messages', 'MessageController@getLastMessages');
 	Route::post('messages', 'MessageController@store');
 });
 

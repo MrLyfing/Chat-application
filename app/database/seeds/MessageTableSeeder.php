@@ -8,28 +8,26 @@ class MessageTableSeeder extends Seeder
 	{
 		DB::table('messages')->delete();
 		$lyfing_id = DB::table('users')
-						->select('id')
 						->where('username', 'Lyfing')
-						->first() //first() is used for getting the table row
-						->id;
+						->pluck('id');
 
 		$admin_id = DB::table('users')
-						->select('id')
 						->where('username', 'Admin')
-						->first()
-						->id;
+						->pluck('id');
 
 		$this->command->info($lyfing_id); //display info on the console when db:seed
 		$this->command->info($admin_id);
 
 		Message::create(array(
 			'user_id' => $lyfing_id,
-			'text' => 'Hey how are you ?'
+			'text' => 'Hey how are you ?',
+			'sender' => 'Lyfing'
 		));
 
 		Message::create(array(
 			'user_id' => $admin_id,
-			'text' => 'Find and you ? :)'
+			'text' => 'Find and you ? :)',
+			'sender' => 'Admin'
 		));
 	}
 
