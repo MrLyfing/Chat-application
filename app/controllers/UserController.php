@@ -14,7 +14,7 @@ class UserController extends \BaseController {
 
 	public function logout()
 	{
-		App::make('User_authController')->delete(Auth::id());
+		App::make('User_authController')->destroy(Auth::id());
 		return Response::json(array('Success' => 'true'));
 	}
 }

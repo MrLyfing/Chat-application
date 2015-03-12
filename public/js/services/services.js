@@ -98,8 +98,27 @@ angular.module('Services', [])
 		return deffered.promise;
 	};
 
-	ServicesUser.create_user = function(username_, password_) {
-	};
+	ServicesUser.logout = function() {
+		var deffered = $q.defer();
+		var req = {
+			method : 'GET',
+			url : 'api/user/logout'
+		};
+		$http(req).success(function(data_, status_) {
+			var wrap_info = {
+				data : data_,
+				status : status_
+			};
+			deffered.resolve(wrap_info);
+		}).error(function(data_, status_) {
+			var wrap_info = {
+				data : data_,
+				status : status_
+			};
+			deffered.reject(wrap_info);
+		});
+		return deffered.promise;
+	}
 
 	ServicesUser.get_auth_users = function() {
 		var deffered = $q.defer();
