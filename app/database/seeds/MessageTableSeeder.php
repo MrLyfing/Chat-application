@@ -20,14 +20,12 @@ class MessageTableSeeder extends Seeder
 
 		Message::create(array(
 			'user_id' => $lyfing_id,
-			'text' => 'Hey how are you ?',
-			'sender' => 'Lyfing'
+			'text' => 'Hey how are you ?'
 		));
 
 		Message::create(array(
 			'user_id' => $admin_id,
-			'text' => 'Find and you ? :)',
-			'sender' => 'Admin'
+			'text' => 'Find and you ? :)'
 		));
 	}
 

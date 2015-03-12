@@ -3,24 +3,26 @@
 		<div class="panel panel-info">
 
 			<div class="panel-heading">
-				CHAT HISTORY
-				<button class='btn btn-danger btn-xs pull-right' ng-click="logout()">Logout</button>
+				<span class="glyphicon glyphicon-envelope"></span> Chat feed
 			</div>
 
-
-			<ul class="list-group" id="panel_size">
-				<li class="list-group-item" ng-repeat="message in messages">
-					{{ message.text }}
-					<p class="text-right"><small><b>{{ message.sender }} | {{ message.created_at }}</b></small></p>
-				</li>
-			</ul>
+			<div class="panel-body" id="panel_size">
+				<ul class="media-list">
+					<li class="media" ng-repeat="message in messages">
+						<div class="media-body" >
+							<small class="text-muted">{{ message.username }} :</small> {{ message.text }}
+							<hr id="sep_hr"/>
+						</div>
+					</li>
+				</ul>
+			</div>
 
 			<div class="panel-footer">
 				<form ng-submit="createMessage()">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Enter Message" ng-model="text_input"/>
 						<span class="input-group-btn">
-							<button class="btn btn-info" type="submit">SEND</button>
+							<button class="btn btn-info" type="submit">Send</button>
 						</span>
 					</div>
 				</form>
@@ -32,11 +34,26 @@
 	<div class="col-md-4">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				ONLINE USERS
+				<span class="glyphicon glyphicon-user"></span> Online user(s)
+				<button class='btn btn-danger btn-xs pull-right' ng-click="logout()">
+					<span class="glyphicon glyphicon-off"></span>
+				</button>
 			</div>
-			<ul class="list-group" id="panel_size_users">
-				<li class="list-group-item">Lyfing</li>
-			</ul>
+
+
+			<div class="panel-body" id="panel_size_users">
+				<ul class="media-list">
+					<li class="media" ng-repeat="auth_user in auth_users">
+						<div class="media-body" >
+							<strong>{{ auth_user.username }}</strong>
+							<br \>
+							<small class="text-muted"><span class="glyphicon glyphicon-time"></span> Active from 3 hours</small>
+							<hr />
+						</div>
+					</li>
+				</ul>
+			</div>
+
 		</div>
 	</div>
 </div>

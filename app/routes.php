@@ -18,9 +18,9 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api'), function() {
 	Route::post('user/login', 'UserController@login');
-	Route::get('user/logout', 'UserController@logout');
 	//Route::post('user/create', 'UserController@create');
-	//Route::get('user/get_list' 'UserController@get_auth_user');
+	Route::get('user/get_auth_users', 'User_authController@index');
+	Route::get('user/logout', 'UserController@logout');
 
 	Route::get('messages', 'MessageController@getLastMessages');
 	Route::post('messages', 'MessageController@store');

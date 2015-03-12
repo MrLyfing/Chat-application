@@ -16,7 +16,7 @@ angular.module('app')
 	$scope.createMessage = function() {
 		if ($scope.text_input == "")
 			return;
-		ServicesUser.createMessage($scope.text_input, ServicesUser.getStorage('username')).then(function(data) {
+		ServicesUser.createMessage($scope.text_input).then(function(data) {
 			$scope.text_input = "";
 
 			console.log(data);
@@ -34,16 +34,10 @@ angular.module('app')
 	};
 
 	$scope.logout = function() {
-		ServicesUser.logout().then(function(data) {
-			$scope.stop();
-			ServicesUser.removeStorage('auth');
-			ServicesUser.removeStorage('username');
-			$location.path('/login');
-
-			console.log(data);
-		}).catch(function(data) {
-			console.log(data);
-		});
+		$scope.stop();
+		ServicesUser.remove('auth');
+		ServicesUser.remove('username');
+		$location.path('/login');
 	};
 
 	$scope.start = function() {
@@ -55,6 +49,17 @@ angular.module('app')
 		$interval.cancel(promise);
 	};
 
-	$scope.start();
+	$scope.get_auth_users = function() {
+		ServicesUser.get_auth_users().then(function(data) {
+			$scope.auth_users = data.data;
 
+			console.log(data);
+		}).catch(function(data) {
+			console.log(data);
+		});
+	};
+
+	$scope.get_auth_users();
+
+	$scope.start();
 }]);

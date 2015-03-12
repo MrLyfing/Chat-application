@@ -7,9 +7,15 @@
 }
 
 #panel_size {
-	height: 575px;
+	height: 593px;
 }
 
 #panel_size_users {
 	height: 650px;
+}
+
+#sep_hr {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	width: 92%;
 }
