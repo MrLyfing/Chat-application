@@ -25,14 +25,6 @@ angular.module('app')
 		});
 	};
 
-	$scope.login = function() {
-		ServicesUser.login($scope.username, $scope.password).then(function(data) {
-			console.log(data);
-		}).catch(function(data) {
-			console.log(data);
-		});
-	};
-
 	$scope.start = function() {
 		$scope.stop();
 		promise_messages = $interval($scope.getMessages, 500);

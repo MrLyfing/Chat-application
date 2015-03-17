@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 class MessageTableSeeder extends Seeder 
 {
 	public function run()

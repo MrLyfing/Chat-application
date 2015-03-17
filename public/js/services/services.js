@@ -141,5 +141,32 @@ angular.module('Services', [])
 		});
 		return deffered.promise;
 	};
+
+	ServicesUser.create_user = function(username_, password_) {
+		var deffered = $q.defer();
+		var req = {
+			method : 'POST',
+			url : 'api/user/create',
+			data : {
+				username : username_,
+				password : password_
+			}
+		};
+		$http(req).success(function(data_, status_) {
+			var wrap_info = {
+				data : data_,
+				status : status_
+			};
+			deffered.resolve(wrap_info);
+		}).error(function(data_, status_) {
+			var wrap_info = {
+				data : data_,
+				status : status_
+			};
+			deffered.reject(wrap_info);
+		});
+		return deffered.promise;
+
+	};
 	return ServicesUser;
 }]);

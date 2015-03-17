@@ -1,6 +1,6 @@
 <?php
 
-class User_authController extends \BaseController {
+class UserAuthController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,7 +17,6 @@ class User_authController extends \BaseController {
 		return Response::json($query);
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -25,10 +24,9 @@ class User_authController extends \BaseController {
 	 */
 	public function create($id)
 	{
-		User_auth::create(array(
+		UserAuth::create(array(
 			'user_id' => $id
-			));
-		//
+		));
 	}
 
 	/**
@@ -39,8 +37,10 @@ class User_authController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		DB::table('users_auth')
+		$query = DB::table('users_auth')
 		->where('users_auth.user_id', '=', $id)
 		->delete();
+
+		return $query;
 	}
 }

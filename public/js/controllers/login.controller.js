@@ -16,6 +16,15 @@ angular.module('app')
 		});
 	};
 
+	$scope.create_user = function() {
+		ServicesUser.create_user($scope.username, $scope.password).then(function(data) {
+
+			console.log(data);
+		}).catch(function(data) {
+			console.log(data);
+		});
+	};
+
 	/* Redirect to the chat page if already logged in */
 	if (ServicesUser.isLogged())
 		$location.path('/chat');
